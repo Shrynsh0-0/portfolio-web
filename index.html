@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shreyansh's Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgb(2, 2, 49);
+            color: wheat;
+            font-family: 'poppins', sans-serif;
+        }
+
+        .left {
+            font-size: 1.5rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 75px;
+            background-color: rgb(0, 0, 33);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 23px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: wheat;
+        }
+
+        nav ul li a:hover {
+            color: magenta;
+            font-size: 1.1rem;
+        }
+
+        main hr {
+            border: 0;
+            background: #9c97f1;
+            height: 1.2px;
+            margin: 40px 84px;
+        }
+
+        .firstsection {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 50px 0;
+        }
+
+        .firstsection>div {
+            width: 30%;
+        }
+
+        .leftsection {
+            font-size: 1.75rem;
+            margin: 30px 0;
+        }
+
+        .rightsection img {
+            width: 100%;
+            height: auto;
+        }
+
+        .purple {
+            color: blueviolet;
+        }
+
+        .text-gray {
+            color: gray;
+        }
+
+        #element {
+            color: lavender;
+        }
+
+        /* Modern Timeline Styles */
+        .secondSection {
+            max-width: 90vw;
+            margin: 50px auto;
+        }
+
+        .secondSection h1 {
+            font-size: 1.75rem;
+            margin-bottom: 30px;
+        }
+
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            position: relative;
+            margin-top: 50px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 25px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: wheat;
+            z-index: 1;
+        }
+
+        .timeline-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            width: 200px;
+            z-index: 2;
+        }
+
+        .timeline-dot {
+            width: 50px;
+            height: 50px;
+            background: rgb(2, 2, 49);
+            border: 2px solid wheat;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            z-index: 2;
+        }
+
+        .timeline-dot img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .timeline-content h3 {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            color: wheat;
+        }
+
+        .timeline-content p {
+            font-size: 0.85rem;
+            color: gray;
+            line-height: 1.2rem;
+        }
+
+        /* Responsive Timeline */
+        @media (max-width: 768px) {
+            .firstsection {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .firstsection>div {
+                width: 80%;
+            }
+
+            .timeline {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .timeline::before {
+                display: none;
+            }
+
+            .timeline-item {
+                width: 80%;
+                margin-bottom: 40px;
+            }
+
+            .hamburger {
+                display: none;
+                flex-direction: column;
+                cursor: pointer;
+                gap: 5px;
+            }
+
+            .hamburger div {
+                width: 25px;
+                height: 3px;
+                background-color: wheat;
+                transition: 0.3s;
+            }
+
+            #nav-links {
+                display: flex;
+            }
+
+            @media (max-width: 768px) {
+                nav {
+                    justify-content: space-between;
+                    padding: 0 20px;
+                }
+
+                .hamburger {
+                    display: flex;
+                }
+
+                #nav-links {
+                    display: none;
+                    position: absolute;
+                    top: 75px;
+                    right: 0;
+                    background-color: rgb(0, 0, 33);
+                    width: 100%;
+                    text-align: center;
+                    flex-direction: column;
+                    padding: 20px 0;
+                }
+
+                #nav-links ul {
+                    flex-direction: column;
+                }
+
+                #nav-links ul li {
+                    margin: 15px 0;
+                }
+
+                #nav-links.show {
+                    display: flex;
+                }
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">Shreyansh's Portfolio</div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="right">
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Services</a></li>
+                    <li><a href="">Projects</a></li>
+                    <li><a href="">Contact Me</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="firstsection">
+            <div class="leftsection">
+                Hi!, I am <span class="purple">Shreyansh</span>😎
+                <div>and I am a </div>
+                <span id="element"></span>
+            </div>
+            <div class="rightsection">
+                <img src="dev.png" alt="">
+            </div>
+        </section>
+        <hr>
+        <section class="secondSection">
+            <span class="text-gray">What I have done so far</span>
+            <h1>Work Experience</h1>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot">
+                        <img src="flutter.png" alt="Flutter Icon">
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Got Introduced to Flutter (2023)</h3>
+                        <p>Started learning UI frameworks and building basic mobile apps.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot">
+                        <img src="python.png" alt="Python Icon">
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Started Internship in Python (2024)</h3>
+                        <p>Built Python projects and gained experience in real-world coding challenges.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot">
+                        <img src="developer.png" alt="Developer Icon">
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Handled Live Projects (2025)</h3>
+                        <p>Worked on real projects, collaborating with teams and deploying applications.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot">
+                        <img src="future.png" alt="Future Icon">
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Future Plans</h3>
+                        <p>Exploring new technologies and continuing growth in development.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['<i>नौसिखिया Android Developer.</i>', '<i>शौकिया Web Developer.</i>'],
+            typeSpeed: 50,
+            backSpeed: 30,
+            backDelay: 1000,
+            loop: true
+        });
+    </script>
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('nav-links');
+            nav.classList.toggle('show');
+        }
+    </script>
+</body>
+
+</html>
