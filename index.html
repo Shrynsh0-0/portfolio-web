@@ -96,6 +96,20 @@
             margin: 30px 0;
         }
 
+        .leftsection .buttons {
+            padding: 20px 0;
+        }
+
+        .leftsection .btn {
+            font-size: 15px;
+            padding: 10px;
+            cursor: pointer;
+            color: azure;
+            border: 1px solid wheat;
+            background: #1e2167;
+            border-radius: 10px;
+        }
+
         .rightsection img {
             width: 100%;
             height: auto;
@@ -181,6 +195,31 @@
             font-size: 0.85rem;
             color: gray;
             line-height: 1.2rem;
+        }
+
+        footer {
+            background-color: #0e0e1a;
+            height: 233px;
+        }
+
+        .footer {
+            display: flex;
+            padding: 50px 60px;
+            justify-content: space-evenly;
+        }
+
+        .footer ul {
+            list-style: none;
+        }
+
+        .footer > div {
+            width: 225px;
+        }
+
+        footer .footer-rights {
+            color: gray;
+            text-align: center;
+            padding: 0;
         }
 
         /* Responsive */
@@ -269,6 +308,10 @@
                 Hi!, I am <span class="purple">Shreyansh</span>😎
                 <div>and I am a </div>
                 <span id="element"></span>
+                <div class="buttons">
+                    <button class="btn">Download Resume</button>
+                    <button class="btn">Visit Github</button>
+                </div>
             </div>
             <div class="rightsection">
                 <img src="dev.png" alt="">
@@ -322,11 +365,28 @@
             </div>
         </section>
     </main>
+    <footer>
+        <div class="footer">
+            <div class="footer-first">
+                <h3>Shreyansh's Developer Portfolio</h3>
+            </div>
+            <div class="footer-second">
+                <ul>Home</ul>
+                <ul>About</ul>
+                <ul>Services</ul>
+                <ul>Projects</ul>
+                <ul>Contact Me</ul>
+            </div>
+        </div>
+        <div class="footer-rights">
+            Copyright &#169; alakazam.com | All Rights Reserved
+        </div>
+    </footer>
 
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script>
         var typed = new Typed('#element', {
-            strings: ['<i>नौसिखिया Android Developer.</i>', '<i>शौकिया Web Developer.</i>'],
+            strings: ['<i>Newbie Android Developer.</i>', '<i>Hobbyist Web Developer.</i>'],
             typeSpeed: 50,
             backSpeed: 30,
             backDelay: 1000,
