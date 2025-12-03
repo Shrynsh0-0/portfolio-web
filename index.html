@@ -212,7 +212,7 @@
             list-style: none;
         }
 
-        .footer > div {
+        .footer>div {
             width: 225px;
         }
 
@@ -276,7 +276,8 @@
 
             #nav-links.show {
                 display: flex;
-                max-height: 500px; /* Smooth slide-down */
+                max-height: 500px;
+                /* Smooth slide-down */
             }
         }
     </style>
@@ -377,6 +378,11 @@
                 <ul>Projects</ul>
                 <ul>Contact Me</ul>
             </div>
+            <div class="footer-third">
+                <p style="text-align:center; margin-top:20px; font-size:1rem; color:wheat;">
+                    Page Views: <span id="viewCount">Loading...</span>
+                </p>
+            </div>
         </div>
         <div class="footer-rights">
             Copyright &#169; alakazam.com | All Rights Reserved
@@ -397,6 +403,17 @@
             const nav = document.getElementById('nav-links');
             nav.classList.toggle('show');
         }
+    </script>
+    <script>
+        fetch("https://countapi.workers.dev/hit/shreyansh-portfolio/visits")
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("viewCount").innerText = data.value;
+        })
+        .catch(error => {
+            console.error("Counter failed:", error);
+            document.getElementById("viewCount").innerText = "N/A";
+        });
     </script>
 </body>
 
